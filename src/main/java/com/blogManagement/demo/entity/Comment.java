@@ -12,11 +12,11 @@ import java.time.LocalDateTime;
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue()
     @Column(nullable = false, updatable = false)
     private Long id;
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Post post;
-    private LocalDateTime date;
+    private LocalDateTime dateTime;
     private String content;
 }
