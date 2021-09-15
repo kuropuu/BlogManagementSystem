@@ -2,16 +2,13 @@
 
 ## The system will auto generate 3 users
 
-email: admin@email.com <br>
-password: admin
+|      Email      |Password  |
+|-----------------|----------|
+|admin@email.com  |`admin`   |
+|manager@email.com|`manager` |
+|user@email.com   |`user`    |
 
-email: manager@email.com<br>
-password: manager
-
-email: user@email.com<br>
-password: user
-
-## And 3 types of category
+## And 3 categories
 
 Technology<br>
 Food<br>
