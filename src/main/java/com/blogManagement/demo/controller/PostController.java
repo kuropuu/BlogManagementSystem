@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Map;
 
@@ -78,7 +76,7 @@ public class PostController {
         return new ResponseEntity<>(newPost,HttpStatus.CREATED);
     }
 
-    @PutMapping("/post")
+    @PutMapping()
     public ResponseEntity<Post> updatePost(@RequestBody Post post){
         Post updatedPost = service.updatePost(post);
         return new ResponseEntity<>(updatedPost,HttpStatus.OK);

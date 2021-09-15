@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,6 +26,6 @@ public class Post {
     @OneToOne
     private Category category;
 
-    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
-    private List<Comment> comments;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
 }

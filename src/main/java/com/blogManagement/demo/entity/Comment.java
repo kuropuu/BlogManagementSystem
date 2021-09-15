@@ -15,8 +15,6 @@ public class Comment {
     @GeneratedValue()
     @Column(nullable = false, updatable = false)
     private Long id;
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
-    private Post post;
     private LocalDateTime dateTime;
     private String content;
 }

@@ -2,6 +2,7 @@ package com.blogManagement.demo.service;
 
 import com.blogManagement.demo.entity.Comment;
 import com.blogManagement.demo.entity.Post;
+import com.blogManagement.demo.entity.User;
 import com.blogManagement.demo.repository.CategoryRepo;
 import com.blogManagement.demo.repository.CommentRepo;
 import com.blogManagement.demo.repository.PostRepo;
@@ -89,10 +90,8 @@ public class BlogService {
             Comment comment1 = new Comment();
             comment1.setContent(comment);
             comment1.setDateTime(LocalDateTime.now());
-            commentRepo.save(comment1);
-            commentRepo.flush();
             List<Comment> comments = post.getComments();
-            comments.add(comment1);
+            comments.add(commentRepo.save(comment1));
             post.setComments(comments);
             postRepo.save(post);
             postRepo.flush();
