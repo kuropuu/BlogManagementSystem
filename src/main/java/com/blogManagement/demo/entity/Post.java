@@ -18,6 +18,7 @@ public class Post {
     @OneToOne
     private User author;
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String message;
     private LocalDate publishDate;
     private LocalDate expiryDate;

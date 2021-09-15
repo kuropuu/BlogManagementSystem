@@ -85,13 +85,13 @@ public class PostController {
     @DeleteMapping("/{postId}")
     public ResponseEntity<String> deletePost(@PathVariable("postId") Long postId){
         String message = service.deletePostById(postId);
-        return new ResponseEntity<>(message,HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/comment/{postId}/{commentId}")
     public ResponseEntity<String> deleteComment(@PathVariable("postId") Long postId, @PathVariable("commentId") Long commentId){
         String message = service.deleteComment(postId,commentId);
-        return new ResponseEntity<>(message,HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
