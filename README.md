@@ -1,8 +1,8 @@
 # BlogManagementSystem
 
-The system will auto generate 3 users:
+## The system will auto generate 3 users:
 
-email: admin@email.com
+email: admin@email.com <br>
 password:admin
 
 email: manager@email.com
@@ -12,7 +12,7 @@ email: user@email.com
 password:user
 
 
-And 3 types of category:
+## And 3 types of category:
 
 Technology
 Food
