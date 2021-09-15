@@ -3,13 +3,13 @@
 ## The system will auto generate 3 users
 
 email: admin@email.com <br>
-password:admin
+password: admin
 
 email: manager@email.com<br>
-password:manager
+password: manager
 
 email: user@email.com<br>
-password:user
+password: user
 
 ## And 3 types of category
 
