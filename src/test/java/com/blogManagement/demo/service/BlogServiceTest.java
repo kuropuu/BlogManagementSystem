@@ -14,6 +14,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
 /**
  *
@@ -21,14 +23,20 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class BlogServiceTest {
     
+    @Mock
+    PostStubRepo postRepo;
+    @Mock
+    CommentStubRepo commentRepo;
+    @Mock
+    UserStubRepo userRepo;
+    @Mock
+    CategoryStubRepo categoryRepo;
+
+    @InjectMocks
     BlogService instance;
     
     public BlogServiceTest() {
-        PostStubRepo postRepo;
-        CommentStubRepo commentRepo;
-        UserStubRepo userRepo;
-        CategoryStubRepo categoryRepo;
-        instance = new BlogService(postRepo, commentRepo, userRepo, categoryRepo);
+        // TODO initialize instance
     }
     
     @BeforeAll
@@ -53,7 +61,6 @@ public class BlogServiceTest {
     @Test
     public void testGetAllPost() {
         System.out.println("getAllPost");
-        BlogService instance = null;
         List<Post> expResult = null;
         List<Post> result = instance.getAllPost();
         assertEquals(expResult, result);
@@ -68,7 +75,6 @@ public class BlogServiceTest {
     public void testGetPostById() {
         System.out.println("getPostById");
         Long id = null;
-        BlogService instance = null;
         Post expResult = null;
         Post result = instance.getPostById(id);
         assertEquals(expResult, result);
@@ -83,7 +89,6 @@ public class BlogServiceTest {
     public void testGetPostByCategory() {
         System.out.println("getPostByCategory");
         String category = "";
-        BlogService instance = null;
         List<Post> expResult = null;
         List<Post> result = instance.getPostByCategory(category);
         assertEquals(expResult, result);
@@ -98,7 +103,6 @@ public class BlogServiceTest {
     public void testGetPostByDate() {
         System.out.println("getPostByDate");
         String date = "";
-        BlogService instance = null;
         List<Post> expResult = null;
         List<Post> result = instance.getPostByDate(date);
         assertEquals(expResult, result);
@@ -113,7 +117,6 @@ public class BlogServiceTest {
     public void testGetPostByAuthorId() {
         System.out.println("getPostByAuthorId");
         Long userId = null;
-        BlogService instance = null;
         List<Post> expResult = null;
         List<Post> result = instance.getPostByAuthorId(userId);
         assertEquals(expResult, result);
@@ -128,7 +131,6 @@ public class BlogServiceTest {
     public void testGetCommentsByPostId() {
         System.out.println("getCommentsByPostId");
         Long postId = null;
-        BlogService instance = null;
         List<Comment> expResult = null;
         List<Comment> result = instance.getCommentsByPostId(postId);
         assertEquals(expResult, result);
@@ -142,7 +144,6 @@ public class BlogServiceTest {
     @Test
     public void testGetUnapprovedPosts() {
         System.out.println("getUnapprovedPosts");
-        BlogService instance = null;
         List<Post> expResult = null;
         List<Post> result = instance.getUnapprovedPosts();
         assertEquals(expResult, result);
@@ -157,7 +158,6 @@ public class BlogServiceTest {
     public void testAddPost() {
         System.out.println("addPost");
         Post post = null;
-        BlogService instance = null;
         Post expResult = null;
         Post result = instance.addPost(post);
         assertEquals(expResult, result);
@@ -173,7 +173,6 @@ public class BlogServiceTest {
         System.out.println("addCommentsToPost");
         Long postId = null;
         String comment = "";
-        BlogService instance = null;
         Post expResult = null;
         Post result = instance.addCommentsToPost(postId, comment);
         assertEquals(expResult, result);
@@ -188,7 +187,6 @@ public class BlogServiceTest {
     public void testUpdatePost() {
         System.out.println("updatePost");
         Post post = null;
-        BlogService instance = null;
         Post expResult = null;
         Post result = instance.updatePost(post);
         assertEquals(expResult, result);
@@ -203,7 +201,6 @@ public class BlogServiceTest {
     public void testDeletePostById() {
         System.out.println("deletePostById");
         Long id = null;
-        BlogService instance = null;
         String expResult = "";
         String result = instance.deletePostById(id);
         assertEquals(expResult, result);
@@ -219,7 +216,6 @@ public class BlogServiceTest {
         System.out.println("deleteComment");
         Long postId = null;
         Long commentId = null;
-        BlogService instance = null;
         String expResult = "";
         String result = instance.deleteComment(postId, commentId);
         assertEquals(expResult, result);
