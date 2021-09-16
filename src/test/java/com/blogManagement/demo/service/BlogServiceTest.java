@@ -85,6 +85,8 @@ class BlogServiceTest {
         List<Comment> queryComments = instance.getCommentsByPostId(testPost1.getId());
         assertEquals("testComment1", queryComments.get(0).getContent());
         // Delete testPost from database
+        long commentID = queryComments.get(0).getId();
+        instance.deleteComment(testPost1.getId(),commentID);
         instance.deletePostById(testPost1.getId());
     }
 
