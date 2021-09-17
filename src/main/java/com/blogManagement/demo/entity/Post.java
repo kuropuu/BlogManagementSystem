@@ -27,6 +27,6 @@ public class Post {
     @OneToOne
     private Category category;
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<>();
 }
